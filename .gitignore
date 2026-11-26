@@ -1,0 +1,11 @@
+# API
+.venv
+__pycache__
+
+# Planner
+/reports
+/local
+
+# Environment
+.env
+.vscode
