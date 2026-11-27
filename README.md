@@ -2,7 +2,7 @@
 
 Plataforma de live commerce da LiveShop Turbo para o mercado B2B. A indústria apresenta os produtos em combos numa transmissão ao vivo, e o varejista assiste, monta o carrinho e registra o interesse de compra, que o representante da indústria leva adiante.
 
-O projeto reescreve o LiveShop Enterprise original ([`GSoaresTech/liveshop-enterprise`](https://github.com/GSoaresTech/liveshop-enterprise)) com API e banco próprios, sem o Supabase. As mudanças em relação ao original estão em [`docs/notes.md`](docs/notes.md).
+O projeto reescreve o LiveShop Enterprise original ([`GSoaresTech/liveshop-enterprise-v1`](https://github.com/GSoaresTech/liveshop-enterprise-v1)) com API e banco próprios, sem o Supabase. As mudanças em relação ao original estão em [`docs/notes.md`](docs/notes.md).
 
 **Estado atual:** fase de planejamento. O repositório contém o documento de regras recebido, as anotações das mudanças e o backlog do primeiro épico. Ainda não há código de produto. As histórias abertas estão em [`docs/backlog.md`](docs/backlog.md).
 

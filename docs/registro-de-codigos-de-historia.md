@@ -6,7 +6,7 @@
 
 | Código | Título | Estado |
 | --- | --- | --- |
-| E1-01 | Inventário das funções do LiveShop Enterprise original com a decisão de manter, mudar ou retirar cada uma | aberta |
+| E1-01 | Inventário das funções do LiveShop Enterprise original com a decisão de manter, mudar ou retirar cada uma | entregue |
 | E1-02 | Objetivo, perfis, regras inegociáveis e vocabulário do produto | aberta |
 | E1-03 | Modelo de domínio e ciclos de vida | aberta |
 | E1-04 | Requisitos que guiam a stack e escolha da stack registrada em ADR | aberta |

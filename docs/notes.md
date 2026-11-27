@@ -6,7 +6,7 @@ Trata-se de uma solução SaaS de live commerce que conecta indústrias e vareji
 
 ## Documentação a ser consultada
 - Enterprise LiveShop Turbo - Documentação Técnica: /Documentos/b2b-liveshop/docs/Enterprise B2B-.pdf
-- Projeto original do LiveShop enterprise: /Documentos/liveshop-enterprise, [GitHub Repo](https://github.com/GSoaresTech/liveshop-enterprise)
+- Projeto original do LiveShop enterprise: /Documentos/liveshop-enterprise, [GitHub Repo](https://github.com/GSoaresTech/liveshop-enterprise-v1)
 - Documentação do Panda Video: [Panda Video](https://docs.pandavideo.com/)
 - Documentação do Unnichat: (questionar a equipe de automação sobre a documentação e conhecimento, ou com os desenvolvedores da ferramenta)
 
