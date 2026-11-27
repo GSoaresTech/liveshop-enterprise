@@ -15,7 +15,7 @@ Todo documento do repositório está nesta lista. Quem cria um documento acresce
 | [`docs/backlog.md`](docs/backlog.md) | As regras de escrita de história e de ClickUp, as pendências com terceiros, as decisões em aberto, os defeitos e os épicos |
 | [`docs/registro-de-codigos-de-historia.md`](docs/registro-de-codigos-de-historia.md) | Todo código de história já usado, com o estado de cada um, para nenhum código ser reaproveitado |
 | [`docs/adr/README.md`](docs/adr/README.md) | Quando uma decisão vira registro de decisão (ADR) e em que formato |
-| [`docs/inventario-do-sistema-original.md`](docs/inventario-do-sistema-original.md) | As funções do LiveShop Enterprise original, cada uma com a decisão proposta de manter, mudar ou retirar, as respostas de P1 a P4 (26/11/2026) e o que foi feito só para a campanha Appel Home. As decisões fora de P1 a P4 aguardam confirmação do Tech Lead |
+| [`docs/inventario-do-sistema-original.md`](docs/inventario-do-sistema-original.md) | As funções do LiveShop Enterprise original, cada uma com a decisão de manter, mudar ou retirar aprovada pelo Tech Lead em 27/11/2026, as respostas de P1 a P4 (26/11/2026) e o que foi feito só para a campanha Appel Home |
 | [`docs/notes.md`](docs/notes.md) | O objetivo do projeto, a stack pedida e as mudanças em relação ao LiveShop Enterprise original |
 | [`docs/Enterprise B2B-.pdf`](docs/Enterprise%20B2B-.pdf) | O documento de regras de negócio recebido. Só as seções 1 a 3 têm conteúdo |
 
