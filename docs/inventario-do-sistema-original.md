@@ -198,15 +198,17 @@ Este documento lista o que o LiveShop Enterprise original faz hoje, função por
 
 | Código | Mudança, nas palavras das notas | Funções da tabela que ela altera | O que fica em aberto |
 | --- | --- | --- | --- |
-| M1 | API e banco de dados próprios, sem o Supabase | 1.1, 1.2, 1.5, 1.6, 2.2, 2.3, 2.4, 9.1, 9.2, 13.1, 13.2, 13.6. Reescreve também, sem mudar a regra, todas as demais funções | P12 (autenticação), P13, P14, P15 (todas da E1-04) |
+| M1 | API e banco de dados próprios, sem o Supabase | 1.1, 1.2, 1.5, 1.6, 2.2, 2.3, 2.4, 9.1, 9.2, 13.1, 13.2, 13.6. Reescreve também, sem mudar a regra, todas as demais funções | P13 (provedor de e-mail, E1-04). P12, P14 e P15 foram respondidas em 26/11/2026, e as respostas são escritas no `docs/stack.md` e no ADR-0001 (E1-04) |
 | M2 | Logout do usuário, com redirecionamento para a página de login | 1.7 (o original tem as peças, sem botão), 1.8 | Nenhuma |
-| M3 | Player do Panda Video, com várias transmissões ao vivo simultâneas | 1.4, 4.3, 6.4, 7.1, 7.2, 7.3, 10.8, 11.1 | P10 (várias lives ao mesmo tempo ou vários ângulos, conta do Panda Video, quem cria a transmissão) e a E1-05 |
+| M3 | Player do Panda Video, com várias transmissões ao vivo simultâneas | 1.4, 4.3, 6.4, 7.1, 7.2, 7.3, 10.8, 11.1 | P10, só a parte de quem cria a transmissão, e a E1-05. Que são várias lives ao mesmo tempo, de indústrias diferentes, e que a conta do Panda Video é uma só, da LiveShop Turbo, foi respondido em 26/11/2026 (E1-03 e E1-05) |
 | M4 | Melhoria e refatoração do código, com foco em desempenho e escalabilidade | 6.9, 7.2, 7.4, 10.1 (apontadas pelas histórias US7.1.2, US5.1.1, US8.1.1 e US7.3.11 do backlog do original) | Nenhuma |
-| M5 | Carrinho com vários produtos e combos, total automático e histórico salvo e editável | 5.3, 5.5, 8.1, 8.2, 8.3, 8.4, 9.4, 10.6 | P7 (produto fora de combo), P8 (prazo de edição e o que é o pedido) |
+| M5 | Carrinho com vários produtos e combos, total automático e histórico salvo e editável | 5.3, 5.5, 8.1, 8.2, 8.3, 8.4, 9.4, 10.6 | Nenhuma pergunta. P7 (produto fora de combo) e P8 (prazo de edição e o que é o pedido) foram respondidas em 26/11/2026, e as respostas são escritas no `docs/modelo-de-dominio.md` (E1-03) |
 | M6 | Notificações por e-mail além do WhatsApp | 9.1, 9.2, 9.5, 9.6, 9.8 | P13 (provedor de e-mail) |
-| M7 | Identificação do acesso do varejista por ID único, com vários acessos no mesmo CNPJ | 1.3, 1.4, 6.1, 6.3, 6.6, 7.4, 8.3, 10.1 | P5 (o que é o ID e se a entrada continua sem senha), P6 (CNPJ em mais de uma indústria) |
-| M8 | Comentários no momento da live, com opção anônima, moderação e filtro de palavras | Função nova, sem equivalente no original. Aparecerá na sala do varejista (7.2) e na sala da indústria (10.8) | P11 (o que é anônimo, quem modera, quando) |
-| M9 | Rastreio de carrinhos abandonados, com notificação ao varejista | Função nova, sem equivalente no original. Depende do carrinho salvo (8.1) e do motor de notificação (9.1) | P9 (quando conta como abandonado, quantos lembretes, qual canal) |
+| M7 | Identificação do acesso do varejista por ID único, com vários acessos no mesmo CNPJ | 1.3, 1.4, 6.1, 6.3, 6.6, 7.4, 8.3, 10.1 | Nenhuma pergunta. P5 (o que é o ID e se a entrada continua sem senha) e P6 (CNPJ em mais de uma indústria) foram respondidas em 26/11/2026, e as respostas são escritas no `docs/modelo-de-dominio.md` (E1-03) |
+| M8 | Comentários no momento da live, com opção anônima, moderação e filtro de palavras | Função nova, sem equivalente no original. Aparecerá na sala do varejista (7.2) e na sala da indústria (10.8) | Nenhuma pergunta. P11 (o que é anônimo, quem modera, quando) foi respondida em 26/11/2026, e a resposta é escrita no `docs/modelo-de-dominio.md` (E1-03) |
+| M9 | Rastreio de carrinhos abandonados, com notificação ao varejista | Função nova, sem equivalente no original. Depende do carrinho salvo (8.1) e do motor de notificação (9.1) | P9, só o número de lembretes e o intervalo entre eles. Quando o carrinho conta como abandonado e por qual canal vai o lembrete foi respondido em 26/11/2026 (E1-03) |
+
+As perguntas P5 a P15 foram respondidas em 26/11/2026, depois da revisão deste documento, salvo as partes que a última coluna ainda lista. As linhas das tabelas por área citam a pergunta, e não a resposta, e a decisão de cada linha continua proposta a confirmar pelo Tech Lead.
 
 ## Perguntas P1 a P4, respondidas em 26/11/2026
 
@@ -236,7 +238,7 @@ As quatro perguntas foram respondidas em 26/11/2026, e a resposta é final. Por 
 - **O que o código e os ADRs do original mostram.** A Appel Home é a única indústria cliente em produção: o ADR 0020 só admite rever o CNPJ único global "quando existir um segundo cliente". O volume varia conforme a fonte e a data: 18.847 varejistas na base legada (migration `20260910100000`), 17.656 numa indústria (`src/hooks/paginacaoPostgrest.ts`) e 1.199 varejistas na live de 15/09/2026 (migration `20260915000200`). Este documento não escolhe um número. O original não tem ferramenta de migração para outro banco, só importações de entrada (12.1 e 12.2) e o padrão de correção de dado de execução única em `supabase/correcoes/`. Nada no código obriga a desligar o original.
 - **Resposta.** "Não". Os dados da Appel Home não migram para o banco novo.
 - **O que mudou no inventário.** Não há épico de migração de dados. As linhas 12.1 e 12.2 (importação em massa de representantes e de varejistas da base legada) continuam `retirar`, a confirmar, e o motivo agora cita a resposta.
-- **O que a resposta não cobre e continua proposta.** A resposta é um "Não" só. Ele responde com certeza à primeira pergunta. A segunda, se o original continua no ar até o B2B o substituir, não teve resposta separada: a proposta anterior (continua no ar até o B2B o substituir) segue a confirmar pelo Tech Lead.
+- **Resposta à segunda pergunta, de 26/11/2026.** O sistema original dá lugar ao B2B: ele é substituído pelo novo. Quando o original sai do ar não foi definido.
 
 ### P4. O representante continua sem acesso à plataforma?
 
