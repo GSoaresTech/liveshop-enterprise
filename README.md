@@ -2,7 +2,7 @@
 
 Plataforma de live commerce da LiveShop Turbo para o mercado B2B. A indústria apresenta os produtos em combos numa transmissão ao vivo, e o varejista assiste, monta o carrinho e registra o interesse de compra, que o representante da indústria leva adiante.
 
-O projeto reescreve o LiveShop Enterprise original ([`GSoaresTech/liveshop-enterprise`](https://github.com/GSoaresTech/liveshop-enterprise)) com API e banco próprios, sem o Supabase. As mudanças em relação ao original estão em [`docs/notes.md`](docs/notes.md).
+O projeto reescreve o LiveShop Enterprise original ([`GSoaresTech/liveshop-enterprise-v1`](https://github.com/GSoaresTech/liveshop-enterprise-v1)) com API e banco próprios, sem o Supabase. As mudanças em relação ao original estão em [`docs/notes.md`](docs/notes.md).
 
 **Estado atual:** fase de planejamento. O repositório contém o documento de regras recebido, as anotações das mudanças e o backlog do primeiro épico. Ainda não há código de produto. As histórias abertas estão em [`docs/backlog.md`](docs/backlog.md).
 
@@ -15,7 +15,7 @@ Todo documento do repositório está nesta lista. Quem cria um documento acresce
 | [`docs/backlog.md`](docs/backlog.md) | As regras de escrita de história e de ClickUp, as pendências com terceiros, as decisões em aberto, os defeitos e os épicos |
 | [`docs/registro-de-codigos-de-historia.md`](docs/registro-de-codigos-de-historia.md) | Todo código de história já usado, com o estado de cada um, para nenhum código ser reaproveitado |
 | [`docs/adr/README.md`](docs/adr/README.md) | Quando uma decisão vira registro de decisão (ADR) e em que formato |
-| [`docs/inventario-do-sistema-original.md`](docs/inventario-do-sistema-original.md) | As funções do LiveShop Enterprise original, cada uma com a decisão proposta de manter, mudar ou retirar, as respostas de P1 a P4 (26/11/2026) e o que foi feito só para a campanha Appel Home. As decisões fora de P1 a P4 aguardam confirmação do Tech Lead |
+| [`docs/inventario-do-sistema-original.md`](docs/inventario-do-sistema-original.md) | As funções do LiveShop Enterprise original, cada uma com a decisão de manter, mudar ou retirar aprovada pelo Tech Lead em 27/11/2026, as respostas de P1 a P4 (26/11/2026) e o que foi feito só para a campanha Appel Home |
 | [`docs/notes.md`](docs/notes.md) | O objetivo do projeto, a stack pedida e as mudanças em relação ao LiveShop Enterprise original |
 | [`docs/Enterprise B2B-.pdf`](docs/Enterprise%20B2B-.pdf) | O documento de regras de negócio recebido. Só as seções 1 a 3 têm conteúdo |
 

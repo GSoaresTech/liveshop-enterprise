@@ -73,7 +73,7 @@ A história se explica sozinha. Referência a outro documento é complemento e n
 
 - A história sem critério de aceite não entra em sprint.
 - Só marca a história como concluída quem verificou os critérios, e nunca quem escreveu o código ou o documento. A verificação é do Tech Lead.
-- A história está pronta quando: o trabalho foi revisado; um teste automático cobre a regra; os critérios de aceite foram verificados; a versão está publicada em homologação; e a documentação foi atualizada no mesmo PR. Enquanto não há homologação, a história que só entrega documento ou decisão segue a regra da decisão em aberto da Parte 2 §2.4.
+- A história está pronta quando: o trabalho foi revisado; um teste automático cobre a regra; os critérios de aceite foram verificados; a versão está publicada em homologação; e a documentação foi atualizada no mesmo PR. Enquanto não há homologação, a história que só entrega documento ou decisão está pronta quando o PR foi revisado e mesclado na `main`, os critérios de aceite foram verificados pelo Tech Lead e a linha dela em `docs/registro-de-codigos-de-historia.md` foi atualizada (decisão do Tech Lead de 27/11/2026).
 - A história entregue sai inteira da Parte 4 no PR que a entrega. Ela não fica marcada como concluída nem resumida, e a linha dela em `docs/registro-de-codigos-de-historia.md` passa a dizer `entregue`. A história descartada sai do mesmo jeito, com o estado `descartada`.
 - A feature sai quando o resultado que ela descreve foi entregue e nenhuma história dela continua aberta. O épico sai quando não sobra feature nele.
 - O backlog guarda só o que falta fazer, para quem o lê não carregar o contexto do que já foi entregue. O trabalho entregue está no histórico do Git e no registro de códigos.
@@ -150,6 +150,11 @@ O PDF de regras (`docs/Enterprise B2B-.pdf`) só tem conteúdo nas seções 1 a 
 | P9 | Quando o carrinho passa a contar como abandonado? Quantos lembretes são enviados, e por qual canal? | Nada | O envio de lembrete ao varejista | E1-03 |
 | P10 | "Múltiplas transmissões ao vivo simultâneas" quer dizer várias lives ao mesmo tempo ou vários ângulos na mesma live? A conta do Panda Video é uma só, da LiveShop Turbo, ou uma por indústria? A plataforma cria a live pela API do Panda Video, ou a indústria cola o endereço? | O PDF §2.2 diz que a indústria insere a URL da transmissão no YouTube | O cadastro da live e o teste da E1-05 | E1-03 e E1-05 |
 | P11 | O comentário anônimo é anônimo para os outros espectadores, com a plataforma sabendo quem escreveu, ou é feito sem entrada nenhuma? Quem modera: a indústria, o Admin ou só o filtro de palavras? A moderação acontece antes de o comentário aparecer ou depois, removendo? | Nada | O modelo do comentário e o envio em tempo real | E1-03 |
+| P16 | O varejista só entra na live em que está cadastrado, ou entra em toda live da indústria em cuja base ele está? | Em 14/09/2026 o produto do original respondeu que "apenas alguém cadastrado naquela live possui acesso", e o código do original faz o contrário: vincula à live corrente todo varejista ativo da indústria (`docs/inventario-do-sistema-original.md`, linha 1.4) | Quem entra em cada live e a taxa de comparecimento da analytics. Dono: Tech Lead | E1-03 |
+| P17 | O combo tem lista de produtos inclusos, desconto, os dois ou nenhum? | O PDF §3.3 lista "produtos inclusos" e "desconto" como dados do combo. O original tem as tabelas de produto e de item do combo sem nenhuma tela que as use, e não tem desconto (linha 5.3 do inventário) | O cadastro do combo e o cálculo do total do carrinho. Dono: Tech Lead | E1-03 |
+| P18 | O Admin acompanha as lives e a analytics de todas as indústrias, ou só gerencia clientes e usuários? | O PDF §2.1 dá ao Admin acompanhar todas as lives, as métricas gerais e a analytics. No original o Admin só tem a tela de usuários (inventário, seção 2) | As telas e as permissões do Admin. Dono: Tech Lead | E1-03 |
+| P19 | O número de WhatsApp do botão de suporte da sala da live é da LiveShop Turbo, da indústria ou de cada live? | No original o número está escrito no código, sem dizer de quem é (linha 7.8 do inventário) | Onde o número é cadastrado. Dono: Tech Lead | E1-03 |
+| P20 | A indústria marca o andamento de cada pedido, como em negociação, convertido ou cancelado? | O original tem esses estados no banco, e nenhuma tela os muda (linhas 8.3 e 8.4 do inventário) | O ciclo de vida do pedido. Dono: Tech Lead | E1-03 |
 
 ### 2.2 Perguntas técnicas
 
@@ -173,7 +178,6 @@ O PDF de regras (`docs/Enterprise B2B-.pdf`) só tem conteúdo nas seções 1 a 
 
 | Decisão | Situação |
 | --- | --- |
-| Definição de pronto da história que só entrega documento ou decisão, enquanto não há homologação nem teste automático para ela | A definir pelo Tech Lead antes da primeira história do É1 ser marcada como concluída. A proposta é: PR revisado e mesclado, critérios verificados pelo Tech Lead e registro atualizado |
 | Nome da lista de defeitos e dívida técnica no ClickUp | A definir |
 | Nome da branch principal: o repositório local foi iniciado na `master`, e as histórias E1-06 e E1-07 usam `main` | A definir na E1-06 |
 
@@ -196,16 +200,7 @@ Lista separada das histórias. Cada linha diz o que acontece, o impacto e do que
 **Objetivo:** deixar escritos e verificados o produto, a stack e o repositório, para que a primeira história de produto comece sem decisão em aberto que mude o banco, a API ou a entrada do varejista.
 
 **F1.1 · Produto definido por escrito**
-As regras do produto, as pessoas, o vocabulário e o modelo de dados estão escritos e confirmados pelo Tech Lead. As histórias são construídas na ordem E1-01, E1-02 e E1-03, pois o inventário do sistema original decide o que entra nas regras e no modelo de dados.
-
-- **E1-01 · Inventário das funções do LiveShop Enterprise original com a decisão de manter, mudar ou retirar cada uma**
-  - **História:** Como equipe técnica, quero a lista do que o sistema original faz, com a decisão para cada função, para que o escopo do B2B não perca regra que já funciona nem herde o que foi feito só para a campanha Appel.
-  - **O que precisa ser feito:** Precisa ser escrito `docs/inventario-do-sistema-original.md`, pois o original tem 28 decisões de arquitetura e regras que o PDF não registra, como preço por região e link de exibição, e as seções de regras do PDF estão vazias.
-  - **Critérios de aceite:**
-    - [ ] Cada função do original está listada com a tela ou a rota onde ela existe.
-    - [ ] Cada função tem a decisão `manter`, `mudar` ou `retirar`, com o motivo.
-    - [ ] Cada mudança de `docs/notes.md` aparece ligada à função que ela altera.
-    - [ ] As perguntas P1 a P4 têm resposta registrada em `docs/inventario-do-sistema-original.md` ou saem como decisão em aberto com dono.
+As regras do produto, as pessoas, o vocabulário e o modelo de dados estão escritos e confirmados pelo Tech Lead. As histórias são construídas na ordem E1-02 e E1-03, pois o modelo de dados usa os nomes do vocabulário do `CLAUDE.md` §4. Elas partem de `docs/inventario-do-sistema-original.md`, que diz o que entra do sistema original.
 
 - **E1-02 · Objetivo, perfis, regras inegociáveis e vocabulário do produto**
   - **História:** Como equipe técnica, quero o objetivo, as pessoas, as regras que não podem falhar e o nome de cada conceito escritos, para que cada regra tenha um teste que a prove e cada conceito tenha um nome só.
